@@ -1,0 +1,81 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+    font-family: 'Cairo', sans-serif;
+}
+.container {
+  margin: 20px auto;
+  width: fit-content;
+}
+input[type="text"] {
+  padding: 10px;
+  width: 300px;
+  border-radius: 21.5px;
+  -webkit-border-radius: 21.5px;
+  -moz-border-radius: 21.5px;
+  -ms-border-radius: 21.5px;
+  -o-border-radius: 21.5px;
+  outline: none;
+  border: 1px solid #b9b9b9;
+  font-size: 18px;
+  font-weight: 400;
+}
+input[type="submit"] {
+  padding: 10px;
+  color: white;
+  background-color:#00c561;
+  font-size: 18px;
+  border: none;
+  border-radius: 20.5px;
+  -webkit-border-radius: 20.5px;
+  -moz-border-radius: 20.5px;
+  -ms-border-radius: 20.5px;
+  -o-border-radius: 20.5px;
+  cursor: pointer;
+}
+.list
+{
+    width: 100%;
+    background-color: #dfdfdf;
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.list .item
+{
+    background-color: white;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 26.5px;
+    -webkit-border-radius: 26.5px;
+    -moz-border-radius: 26.5px;
+    -ms-border-radius: 26.5px;
+    -o-border-radius: 26.5px;
+    margin: 10px;
+}
+.list .item button
+{
+    font-size: 18px;
+    padding: 5px 5px;
+    background-color: #ff5300;
+    border: none;
+    font-weight: 400;
+    color: white;
+    border-radius: 15.5px;
+    -webkit-border-radius: 15.5px;
+    -moz-border-radius: 15.5px;
+    -ms-border-radius: 15.5px;
+    -o-border-radius: 15.5px;
+    cursor: pointer;
+}
