@@ -1,6 +1,8 @@
 let form = document.querySelector("form");
 let itemsContainer = document.querySelector(".list");
 let textInput = document.querySelector(".text");
+let deleteAll = document.querySelector(".del-all");
+
 let arrOfItems = [];
 if (localStorage.getItem("task")) {
   arrOfItems = JSON.parse(localStorage.getItem("task"));
@@ -20,6 +22,7 @@ function addTaskToArray(data) {
   let task = {
     id: Date.now(),
     text: data,
+    selected: false,
   };
   arrOfItems.push(task);
   addToLocalStorage(arrOfItems);
@@ -30,6 +33,24 @@ itemsContainer.addEventListener("click", (e) => {
     removeFromLocalStorage(e.target.parentElement.getAttribute("id"));
     e.target.parentElement.remove();
   }
+});
+
+itemsContainer.addEventListener("change", (e) => {
+  for (let i = 0; i < arrOfItems.length; i++) {
+    if (
+      e.target.classList.contains("checkbox") &&
+      e.target.id == arrOfItems[i].id
+    ) {
+      arrOfItems[i].selected = e.target.checked;
+    }
+  }
+  addToLocalStorage(arrOfItems);
+});
+
+deleteAll.addEventListener("click", () => {
+  itemsContainer.innerHTML = "";
+  localStorage.clear();
+  arrOfItems = [];
 });
 
 function addToPage(arrOfItems) {
@@ -43,7 +64,12 @@ function addToPage(arrOfItems) {
     let button = document.createElement("button");
     button.className = "delete";
     button.innerHTML = "Delete";
-    div.append(p, button);
+    let check = document.createElement("input");
+    check.setAttribute("type", "checkbox");
+    check.id = task.id;
+    task.selected == true ? (check.checked = true) : (check.checked = false);
+    check.className = "checkbox";
+    div.append(p, button, check);
     itemsContainer.appendChild(div);
   });
 }
